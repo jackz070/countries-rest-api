@@ -48,7 +48,18 @@ const CountriesList = () => {
     return <Loader />;
   }
   if (isError) {
-    console.log("error");
+    return (
+      <div className="w-full min-h-screen justify-start mt-48 items-center flex flex-col">
+        <div className=" text-2xl font-semibold">Oops!</div>
+        <div className="text-sm text-darkGray ">Something went wrong...</div>
+        <Link
+          to="/"
+          className="text-sm underline text-darkGray dark:hover:text-lightPrimary hover:text-darkPrimary"
+        >
+          Go to Homepage
+        </Link>
+      </div>
+    );
   }
   if (isSuccess) {
     return (
@@ -56,21 +67,22 @@ const CountriesList = () => {
         <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between">
           <div className="box-border relative sm:m-8 sm:mb-4 sm:w-fit w-[90%] mt-4 mb-4 mx-auto ">
             <input
-              type="text"
+              type="textarea"
               value={searchTerm}
               onChange={handleSearchInput}
               placeholder="Search for a country..."
+              aria-label="Search for a country"
               className="dark:placeholder:text-white dark:text-white dark:bg-darkPrimary bg-white shadow-md px-12 py-2 placeholder:text-xs relative sm:w-fit w-full "
             />
             <AiOutlineSearch className="absolute top-3 left-4 text-lg dark:text-white text-gray-500" />
           </div>
-          <div>
+          <div className=" ">
             <select
               defaultValue={"Filter by Region"}
-              className="dark:placeholder:text-white dark:text-white dark:bg-darkPrimary bg-white shadow-md sm:m-8 sm:mb-4 m-4 px-8 py-3 text-xs border-transparent border-r-8"
+              className="dark:placeholder:text-white dark:text-white dark:bg-darkPrimary bg-white shadow-md sm:m-8 sm:mb-4 m-4 ml-5 px-8 py-3 text-xs border-transparent border-r-8"
               onChange={handleFilterChange}
             >
-              <option selected value="">
+              <option selected value="Filter by Region" disabled>
                 Filter by Region
               </option>
               <option value="Africa">Africa</option>
@@ -82,9 +94,9 @@ const CountriesList = () => {
           </div>
         </div>
         {notFound && (
-          <div className="flex flex-col h-screen items-center justify-center">
+          <div className="flex flex-col h-screen items-center justify-start mt-24">
             <div className="text-xl">No countries found</div>
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-darkGray ">
               Try changing search term or filtering options
             </div>
           </div>
