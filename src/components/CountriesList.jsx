@@ -13,6 +13,7 @@ const CountriesList = () => {
   // TODO implement some "notFound" marker to provide this information when searching
   const [notFound, setNotFound] = useState(false);
 
+
   const { data: countries, isSuccess, isLoading, isError } = useCountries();
 
   const handleSearchInput = (e) => {
