@@ -31,7 +31,7 @@ const DarkModeSwitch = () => {
           checked={darkMode}
           onChange={handleChange}
         />
-        {darkMode ? <BsFillMoonFill /> : <BsMoon className="" />}
+        {darkMode ? <BsFillMoonFill id="moon-filled" /> : <BsMoon id="moon" />}
         <span className="ml-2">Dark mode</span>
       </label>
     </div>
