@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCountries } from "../api";
 import CountryCard from "./countryCard/CountryCard";
 
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons-all-files/ai/AiOutlineSearch";
 import { Loader } from "./Loader";
 
 // TODO handle different query states
@@ -12,7 +12,6 @@ const CountriesList = () => {
   const [filterOptions, setFilterOptions] = useState([]);
   // TODO implement some "notFound" marker to provide this information when searching
   const [notFound, setNotFound] = useState(false);
-
 
   const { data: countries, isSuccess, isLoading, isError } = useCountries();
 

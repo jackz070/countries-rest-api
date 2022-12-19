@@ -1,6 +1,7 @@
 import React from "react";
 
-import { BsMoon, BsFillMoonFill } from "react-icons/bs";
+import { FaRegMoon } from "react-icons-all-files/fa/FaRegMoon";
+import { FaMoon } from "react-icons-all-files/fa/FaMoon";
 
 const DarkModeSwitch = () => {
   const [darkMode, setDarkMode] = React.useState(localStorage.theme === "dark");
@@ -31,7 +32,7 @@ const DarkModeSwitch = () => {
           checked={darkMode}
           onChange={handleChange}
         />
-        {darkMode ? <BsFillMoonFill id="moon-filled" /> : <BsMoon id="moon" />}
+        {darkMode ? <FaMoon id="moon-filled" /> : <FaRegMoon id="moon" />}
         <span className="ml-2">Dark mode</span>
       </label>
     </div>

@@ -5,7 +5,7 @@ import { useCountry } from "../api";
 import Information from "../components/countryCard/Information";
 import BorderingCountryButton from "../components/BorderingCountryButton";
 import Button from "../components/Button";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowLeft } from "react-icons-all-files/ai/AiOutlineArrowLeft";
 import { Loader } from "../components/Loader";
 
 const CountryPage = () => {
